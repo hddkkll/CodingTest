@@ -6,6 +6,7 @@
 예를 들어 n = 3이라면 2를 반환해주면 됩니다.
 
  */
+/*
 public class fibonacci {
 	public static void main(String[] args) {
 	Solution9 s = new Solution9();
@@ -27,5 +28,28 @@ class Solution9{
 			}
 		}
 		return answer;
+	}
+}
+*/
+
+//다이나믹 프로그래밍(dp) 이용
+public class fibonacci {
+	public static void main(String[] args) {
+	Solution9 s = new Solution9();
+	System.out.println("결과 : " + s.solution(5));
+	}
+}
+class Solution9{
+	int[] dp = new int[100];
+	public int solution(int n) {
+
+		if(n==1)
+			return 1;
+		if(n==2)
+			return 1;
+		if(dp[n] != 0)
+			return dp[n];
+		
+		return dp[n] = solution(n-1) + solution(n-2);
 	}
 }
