@@ -25,8 +25,9 @@ public class carpet {
 		Solution11 s = new Solution11();
 		int a = 10;
 		int b = 2;
-		
-		System.out.println(s.solution(a,b));
+		int[] result;
+		result=s.solution(a, b);
+		System.out.println("결과 : [" + result[0] + ", " + result[1] + "]");
 	}
 }
 
@@ -46,6 +47,7 @@ class Solution11{
 			return answer;
 		}
 		else {
+			//약수구하기
 			for(int i=2; i<=sum/2; i++) {
 				if(sum%i==0) {
 					arr[count]=i;
@@ -56,10 +58,6 @@ class Solution11{
 			if(count%2==0) {
 				answer[0] = arr[count/2];
 				answer[1] = sum/answer[0];
-			}
-			//확인출력
-			for(int i=0; i<2; i++) {
-				System.out.println(answer[i]);
 			}
 		}
 		
